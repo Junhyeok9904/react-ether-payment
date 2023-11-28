@@ -5,6 +5,8 @@ import { ethers } from "ethers";
 import fourPartyModel from './fourPartyModel.json';
 import { } from 'did-jwt-vc';
 import { EthrDID } from 'ethr-did'
+import QRcode from 'qrcode';
+
 export const App = () => {
   const [contract, setContract] = useState(null);
   const [account, setAccount] = useState("");
@@ -26,6 +28,7 @@ export const App = () => {
   const [did, setDid] = useState(null);
   // merchant
   const [merchantCode, setMerchantCode] = useState("")
+  const [merchantQRcode, setMerchantQRcode] = useState(null)
 
   const makeEtherDID = async () => {
     const txSigner = await new ethers.BrowserProvider(window.ethereum).getSigner();
@@ -276,6 +279,16 @@ export const App = () => {
     await tx.wait();
   };
 
+  const makeMerchantQRCode = async (code) => {
+    console.log("making qr with merchant code");
+    try {
+      const qrCodeImage = await QRcode.toDataURL(code);
+      setMerchantQRcode(qrCodeImage);
+    } catch (error) {
+      console.error('Error generating QR code:', error);
+      return null;
+    }
+  }
 
   const handleAddressChange = (e) => {
     setAddress(e.target.value);
@@ -326,6 +339,8 @@ export const App = () => {
       checkRole();
     }
   }, [connected, smartContractConnected]);
+
+  // renders
 
   const renderOwnerSection = () => {
     if (isOwner()) {
@@ -397,8 +412,14 @@ export const App = () => {
             <input type="text" value={amount} onChange={handleAmountChange} />
           </label>
           <br />
+          <label>
+            Amount
+            <input type="text" value={index} onChange={handleIndexChange} />
+          </label>
+          <br />
           <button onClick={handleMintButtonClick}>Mint Tokens</button>
           <button onClick={handleBurnButtonClick}>Burn Tokens</button>
+          <button onClick={confirmTransaction}>Confirm</button>
         </div>
       </div>
     )
@@ -439,6 +460,7 @@ export const App = () => {
           <p></p>
           {merchantCode && `${merchantCode}`}
           <button onClick={checkMerchantCode}>checkCode</button>
+          {merchantQRcode && <img src={merchantQRcode} alt="QR Code" />}
         </>
       </div>
       )
