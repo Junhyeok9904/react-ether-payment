@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/static/css/main.a070d2c6.css",
-    "main.js": "/static/js/main.b2b8f9e8.js",
-    "static/js/787.7518bbd8.chunk.js": "/static/js/787.7518bbd8.chunk.js",
-    "static/media/index.cjs": "/static/media/index.484628978b97af3b0b6e.cjs",
-    "index.html": "/index.html",
-    "main.a070d2c6.css.map": "/static/css/main.a070d2c6.css.map",
-    "main.b2b8f9e8.js.map": "/static/js/main.b2b8f9e8.js.map",
-    "787.7518bbd8.chunk.js.map": "/static/js/787.7518bbd8.chunk.js.map"
+    "main.css": "/react-ether-payment/static/css/main.a070d2c6.css",
+    "main.js": "/react-ether-payment/static/js/main.6b3e44bf.js",
+    "static/js/787.7518bbd8.chunk.js": "/react-ether-payment/static/js/787.7518bbd8.chunk.js",
+    "static/media/index.cjs": "/react-ether-payment/static/media/index.484628978b97af3b0b6e.cjs",
+    "index.html": "/react-ether-payment/index.html",
+    "main.a070d2c6.css.map": "/react-ether-payment/static/css/main.a070d2c6.css.map",
+    "main.6b3e44bf.js.map": "/react-ether-payment/static/js/main.6b3e44bf.js.map",
+    "787.7518bbd8.chunk.js.map": "/react-ether-payment/static/js/787.7518bbd8.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.a070d2c6.css",
-    "static/js/main.b2b8f9e8.js"
+    "static/js/main.6b3e44bf.js"
   ]
 }
