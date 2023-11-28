@@ -1,3 +1,85 @@
+# React Ethereum Payment System
+
+A web application for an international payment system utilizing Ethereum stable coins.
+
+## Features
+
+Utilizes the four-party model commonly used in credit card systems.
+Users can exchange coins issued by banks for cash and use them as international points.
+Creating an internationally stabilized system requires dealing with many complexities, but Ethereum's security system provides a relatively simple and stable solution.
+
+
+# Smart Contract Deployment using Truffle
+
+This repository demonstrates how to deploy a smart contract using Truffle, and specifically, how to deploy it on a private local network using Ganache. After deployment, the contract's ABI (Application Binary Interface) is extracted from the build folder and included in the `src` directory.
+
+## Prerequisites
+
+- [Node.js](https://nodejs.org/) installed
+- [Truffle](https://www.trufflesuite.com/docs/truffle/getting-started/installation) installed
+- [Ganache](https://www.trufflesuite.com/ganache) installed (for local testing)
+
+## Installation
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/Junhyeok9904/react-ether-payment.git
+   cd react-ether-payment
+   ```
+
+2. Install dependencies:
+
+   ```bash
+   npm install
+   ```
+
+## Deployment
+
+1. Run Ganache to start a local blockchain:
+
+   ```bash
+   ganache-cli
+   ```
+
+2. Compile and migrate the smart contract:
+
+   ```bash
+   truffle migrate
+   ```
+
+   This will deploy the smart contract to the local Ganache blockchain.
+
+## ABI Extraction
+
+1. After deployment, the smart contract ABI is available in the `build/contracts` directory.
+
+2. Copy the ABI JSON file to the `src` directory:
+
+   ```bash
+   cp build/contracts/YourContract.json src/
+   ```
+
+## Usage
+
+Now, you can use the smart contract ABI in your application. Import it in your JavaScript/TypeScript file:
+
+```javascript
+// src/app.js
+const YourContract = require('./YourContract.json');
+
+// Use YourContract ABI as needed
+// ...
+```
+
+## Contributing
+
+Feel free to contribute to this repository by opening issues or pull requests.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
