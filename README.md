@@ -1,6 +1,6 @@
 # React Ethereum Payment System
 
-A web application for an international payment system utilizing Ethereum stable coins.
+A web application for an international payment system utilizing Ethereum coins.
 
 ## Features
 
