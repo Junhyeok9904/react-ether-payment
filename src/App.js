@@ -76,7 +76,7 @@ export const App = () => {
 
   // ganache 또는 다른 네트워크로 배포한 컨트랙트의 어드레스를 입력
   // Put in the address where it was deployed in the contractAddress constant
-  const contractAddress = `0x152cd01B4e35FA5acaC67ef21aD16C65435bCc36`;
+  const contractAddress = `0x1B255F6e6c3Dd3856D1b63b0AE47f9Cf4Bf62a2b`;
   const provider = new ethers.BrowserProvider(window.ethereum);
   const ownerAddress = `0x4a4e7343e5c555582720c1334b4124a03f5d1171`;
 
