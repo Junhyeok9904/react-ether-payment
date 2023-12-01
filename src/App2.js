@@ -6,13 +6,15 @@ import { Button } from 'react-bootstrap';
 import { EthrDID } from 'ethr-did';
 import User from './user';
 import ToolBar from './ToolBar'
+import PayMent from './PayMent'
 export const App2 = () => {
   
   const [contract, setContract] = useState(null);
   const [account, setAccount] = useState(null);
   const { sdk, connected } = useSDK();
   const [isLoading, setLoading] = useState(false);
-  
+  const [payment, setPayment] = useState(null);
+  const [data, setData] = useState(null);
   const metamskConnect = async () => {
     // Function to connect to Metamask
     try {
@@ -39,12 +41,13 @@ export const App2 = () => {
   const connect = () => {
     metamskConnect();
     smartContractConnect();
+    /*
     if (connected) {
       window.ethereum.on('accountsChanged', function (accounts) {
         // Time to reload your interface with accounts[0]!
         window.location.reload();
       });
-    }
+    */
   };
 
   useEffect(() => {
@@ -57,6 +60,12 @@ export const App2 = () => {
         setLoading(false);
       });
     }
+      // Read params code
+      const params = new URLSearchParams(window.location.search);
+      const data = params.get('data');
+      const payment = params.get('payment');
+      setPayment(payment);
+      setData(data);
   }, [isLoading]);
 
   const installCheck = () => {
@@ -81,6 +90,7 @@ export const App2 = () => {
       <>
         <ToolBar account={account} contract={contract} />
         <User account={account} />
+        {(payment) && <PayMent account={account} contract={contract} data={data}/>}
       </>
       )}
     </div>

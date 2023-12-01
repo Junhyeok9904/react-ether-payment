@@ -22,7 +22,8 @@ export const User = (props) => {
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
     const qrCode = async () => {
-      const url = `${window.location.href}?data=${account}`;
+      //const url = `${window.location.href}?data=${account}&payment=true`;
+      const url = `http://192.129.4.2:3000/?data=${account}&payment=true`;
       setQR(<QRCodeSVG value={url} />) 
     };
     useEffect(() => {

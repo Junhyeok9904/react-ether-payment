@@ -16,7 +16,6 @@ export const ToolBar = (props) => {
     };
     return (
       <div className="ToolBar">
-        <button onClick={handleButton}>클럭버튼</button>
       </div>
     );
   };
