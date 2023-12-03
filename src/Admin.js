@@ -289,8 +289,8 @@ export const Admin = () => {
         }
       };
     const qrCodeForMerchant = async () => {
-        //const url = `${window.location.href}?data=${account}&payment=true`;
-        const url = `http://192.129.4.2:3000/?data=${merchantCode}&payment=true`;
+        const url = `${window.location.href}?data=${account}&payment=true`;
+        //const url = `http://192.129.4.2:3000/?data=${merchantCode}&payment=true`;
         setQR(<QRCodeSVG value={url} />) 
       };
     const ownerPage = () => {
