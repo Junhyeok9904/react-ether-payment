@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/react-ether-payment/static/css/main.f349675e.css",
-    "main.js": "/react-ether-payment/static/js/main.7122b0e7.js",
+    "main.js": "/react-ether-payment/static/js/main.62303fca.js",
     "static/media/index.cjs": "/react-ether-payment/static/media/index.484628978b97af3b0b6e.cjs",
     "index.html": "/react-ether-payment/index.html",
     "main.f349675e.css.map": "/react-ether-payment/static/css/main.f349675e.css.map",
-    "main.7122b0e7.js.map": "/react-ether-payment/static/js/main.7122b0e7.js.map"
+    "main.62303fca.js.map": "/react-ether-payment/static/js/main.62303fca.js.map"
   },
   "entrypoints": [
     "static/css/main.f349675e.css",
-    "static/js/main.7122b0e7.js"
+    "static/js/main.62303fca.js"
   ]
 }
