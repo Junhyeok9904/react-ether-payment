@@ -2,6 +2,7 @@
   "name": "metamask",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://junhyeok9904.github.io/react-ether-payment/",
   "dependencies": {
     "@metamask/sdk-react": "^0.11.2",
     "@metamask/sdk-react-ui": "^0.12.0",
@@ -48,4 +49,5 @@
       "last 1 safari version"
     ]
   }
+  
 }

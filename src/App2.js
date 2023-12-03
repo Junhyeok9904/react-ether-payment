@@ -84,6 +84,7 @@ export const App2 = () => {
 
   return (
     <div className="App2">
+      check
       {installCheck()}
       {account && (
       // after sign in
