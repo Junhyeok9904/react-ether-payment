@@ -20,7 +20,7 @@ root.render(
         url: window.location.host,
       }
     }}>
-      <BrowserRouter basename="https://junhyeok9904.github.io/react-ether-payment"> 
+      <BrowserRouter basename="/"> 
         <Routes>
           <Route path="/admin" element={ <Admin /> } /> 
           <Route path="*" element={ <App2 /> } /> 
