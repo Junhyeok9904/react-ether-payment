@@ -20,7 +20,7 @@ root.render(
         url: window.location.host,
       }
     }}>
-      <BrowserRouter> 
+      <BrowserRouter basename={process.env.PUBLIC_URL}> 
         <Routes>
           <Route path="/admin" element={ <Admin /> } /> 
           <Route path="*" element={ <App2 /> } /> 
