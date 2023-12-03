@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Link} from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App2 from './App2';
@@ -20,7 +20,7 @@ root.render(
         url: window.location.host,
       }
     }}>
-      <BrowserRouter basename="/"> 
+      <BrowserRouter basename={process.env.PUBLIC_URL}> 
         <Routes>
           <Route path="/admin" element={ <Admin /> } /> 
           <Route path="*" element={ <App2 /> } /> 
