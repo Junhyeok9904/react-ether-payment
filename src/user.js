@@ -29,7 +29,7 @@ export const User = (props) => {
     useEffect(() => {
       
       try {
-        const contractAddress = `0x1B255F6e6c3Dd3856D1b63b0AE47f9Cf4Bf62a2b`;
+        const contractAddress = `0x0b52DE022e5c9234b017ABbc0f12bD08Be0a84cD`;
         setSigner(new ethers.BrowserProvider(window.ethereum).getSigner());
         setContract(new ethers.Contract(contractAddress, fourPartyModel.abi, signer));
       } catch (err) {
@@ -38,8 +38,8 @@ export const User = (props) => {
     }, []);
     const checkBalance = async () => {
       try {
-        let signer = await new ethers.BrowserProvider(window.ethereum).getSigner();
-        let result = await contract.connect(signer).balanceOf(account);
+        let provier = await new ethers.BrowserProvider(window.ethereum);
+        let result = await contract.connect(provier).balanceOf(account);
         let balance = Number(result);
         setBalance(balance);
         console.log(`balance log:`, balance);
@@ -47,6 +47,7 @@ export const User = (props) => {
         console.error('Error:', error);
       }
     };
+
     const submitTransaction = async () => {
       console.log(`submiting trasaction`);
       // Get singer 

@@ -15,6 +15,8 @@ import Col from 'react-bootstrap/Col';
 Modal.setAppElement('#root');
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+const contractAddress = "0x0b52DE022e5c9234b017ABbc0f12bD08Be0a84cD"
+
 root.render(
   <React.StrictMode>
     <MetaMaskProvider debug={false} sdkOptions={{
@@ -26,8 +28,8 @@ root.render(
     }}>
       <Container>
       <Row>
-        <Col><App2 /></Col>
-        <Col><Admin /></Col>
+        <Col><App2 contractAddress = {contractAddress}/></Col>
+        <Col><Admin contractAddress = {contractAddress}/></Col>
       </Row>
       </Container>
       

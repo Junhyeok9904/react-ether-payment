@@ -7,8 +7,8 @@ import { EthrDID } from 'ethr-did';
 import User from './user';
 import ToolBar from './ToolBar'
 import PayMent from './PayMent'
-export const App2 = () => {
-  
+export const App2 = (props) => {
+  const {contractAddress} = props;
   const [contract, setContract] = useState(null);
   const [account, setAccount] = useState(null);
   const { sdk, connected } = useSDK();
@@ -29,7 +29,6 @@ export const App2 = () => {
   const smartContractConnect = () => {
     // Connect smart contract
     try {
-      const contractAddress = `0x1B255F6e6c3Dd3856D1b63b0AE47f9Cf4Bf62a2b`;
       const signer = new ethers.BrowserProvider(window.ethereum).getSigner();
       const smartContract = new ethers.Contract(contractAddress, fourPartyModel.abi, signer);
       setContract(smartContract);
@@ -89,7 +88,7 @@ export const App2 = () => {
       // after sign in
       <>
         <ToolBar account={account} contract={contract} />
-        <User account={account} />
+        <User account={account} contractAddress={contractAddress}/>
         {(payment) && <PayMent account={account} contract={contract} data={data}/>}
       </>
       )}

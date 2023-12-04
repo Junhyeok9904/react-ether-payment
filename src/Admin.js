@@ -9,8 +9,8 @@ import ProgressBar from 'react-bootstrap/ProgressBar';
 import Form from 'react-bootstrap/Form';
 import InputGroup from 'react-bootstrap/InputGroup';
 import Spinner from 'react-bootstrap/Spinner';
-export const Admin = () => {
-
+export const Admin = (props) => {
+    const {contractAddress} = props;
     const [contract, setContract] = useState(null);
     const [account, setAccount] = useState(null);
     const [walletContractConneted, setWalletContractConneted] = useState(null);
@@ -28,6 +28,7 @@ export const Admin = () => {
     const [txWait, setTxWait] = useState(false);
     const [qr, setQR]  = useState(null);
     const [show, setShow] = useState(false);
+    const [allcoin ,setAllcoin] = useState(0);
 
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
@@ -52,7 +53,6 @@ export const Admin = () => {
     const smartContractConnect = () => {
         // Connect smart contract
         try {
-          const contractAddress = `0xc354DeDAcCBDfaa15fAb6C24594aB75eadC2ab70`;
           const signer = new ethers.BrowserProvider(window.ethereum).getSigner();
           const smartContract = new ethers.Contract(contractAddress, fourPartyModel.abi, signer);
           setContract(smartContract);
@@ -288,9 +288,19 @@ export const Admin = () => {
           console.error('Error:', error);
         }
       };
+    const checkAllcoin = async () => {
+        try {
+            let provier = await new ethers.BrowserProvider(window.ethereum);
+            let result = await contract.connect(provier).totalSupply();
+            setAllcoin(Number(result))
+            console.log("all coin : ",result)
+          } catch (error) {
+            console.error('Error:', error);
+          }
+    }
+
     const qrCodeForMerchant = async () => {
         const url = `${window.location.href}?data=${account}&payment=true`;
-        //const url = `http://192.129.4.2:3000/?data=${merchantCode}&payment=true`;
         setQR(<QRCodeSVG value={url} />) 
       };
     const ownerPage = () => {
@@ -459,7 +469,8 @@ export const Admin = () => {
             {/* after checked */}
             {positions.checked && (
                 <>
-
+                    <Button onClick={checkAllcoin}>check all coin</Button>
+                    {allcoin && <>all coin : {allcoin}</>}
                     {positions.owner && ownerPage()}
                     {(positions.issuer || positions.brand) && issuerBrandPage()}
                     {positions.acquire && acquirePage()}
