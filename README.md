@@ -75,6 +75,15 @@ const YourContract = require('./YourContract.json');
 // ...
 ```
 
+```javascript
+// put in your SmartContractAddress
+// src/index.js
+const contractAddress = "0x0b52DE022e5c9234b017ABbc0f12bD08Be0a84cD"
+
+// Use YourContract ABI as needed
+// ...
+```
+
 ## Contributing
 
 Feel free to contribute to this repository by opening issues or pull requests.
