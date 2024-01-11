@@ -29,8 +29,13 @@ This repository demonstrates how to deploy a smart contract using Truffle, and s
    git clone https://github.com/Junhyeok9904/react-ether-payment.git
    cd react-ether-payment
    ```
+2.1 Switch branch: 
 
-2. Install dependencies:
+   ```bash
+   git switch ver2
+   ```
+
+2.2 Install dependencies:
 
    ```bash
    npm install
