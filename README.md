@@ -32,6 +32,7 @@ This repository demonstrates how to deploy a smart contract using Truffle, and s
 
    ```bash
    npm install
+   yarn
    ```
 
 ## Deployment
