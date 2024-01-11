@@ -18,6 +18,8 @@ This repository demonstrates how to deploy a smart contract using Truffle, and s
 - [Node.js](https://nodejs.org/) installed
 - [Truffle](https://www.trufflesuite.com/docs/truffle/getting-started/installation) installed
 - [Ganache](https://www.trufflesuite.com/ganache) installed (for local testing)
+- If you need a smart contract to depoly, please see here
+- https://github.com/Junhyeok9904/solidity_practice/blob/main/5_fourPartyModel.sol
 
 ## Installation
 
